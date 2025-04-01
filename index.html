@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpellBee - The Ultimate Word Puzzle Game | Challenge Your Vocabulary</title>
+    
+    <!-- Enhanced SEO Meta Tags -->
+    <meta name="description" content="Play SpellBee, the engaging word puzzle game where you create words from given letters. Challenge yourself with pangrams, improve your vocabulary, and compete for high scores. Perfect for word game enthusiasts and language learners!">
+    <meta name="keywords" content="spellbee, word game, puzzle game, word puzzle, spelling game, vocabulary game, pangram finder, word builder, educational game, brain training, spelling bee game, word challenge">
+    <meta name="author" content="SpellBee Games">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="SpellBee - The Ultimate Word Puzzle Game">
+    <meta property="og:description" content="Create words, find pangrams, and challenge your vocabulary with this addictive word puzzle game. Perfect for all skill levels!">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="SpellBee">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SpellBee - Word Puzzle Challenge">
+    <meta name="twitter:description" content="Test your vocabulary and word-building skills with SpellBee. Find pangrams, create words, earn points!">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        /* Enhanced Mobile Optimization */
+        @media (max-width: 640px) {
+            .game-container {
+                height: calc(100vh - 60px);
+                margin-bottom: 2rem;
+            }
+            
+            .letter-grid {
+                transform: scale(0.8);
+                margin: 0 auto;
+            }
+            
+            .text-5xl {
+                font-size: 2.5rem;
+            }
+            
+            .game-steps-container {
+                padding: 1rem !important;
+            }
+            
+            .step-card {
+                padding: 1rem !important;
+            }
+        }
+
+        /* Improved Typography */
+        .content-text {
+            line-height: 1.8;
+            letter-spacing: 0.01em;
+        }
+
+        /* Enhanced Accessibility */
+        .focus-visible:focus {
+            outline: 2px solid #4F46E5;
+            outline-offset: 2px;
+        }
+
+        /* Smooth Transitions */
+        .transition-all {
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Print Styles */
+        @media print {
+            .game-container {
+                display: none;
+            }
+            
+            .print-friendly {
+                font-size: 12pt;
+                line-height: 1.5;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="min-h-screen bg-gray-50 py-3">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <!-- Game Container -->
+            <div class="w-full min-h-screen flex flex-col">
+                <header class="mb-8">
+                    <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 text-center mb-4">
+                        SpellBee - Word Puzzle Challenge
+                    </h1>
+                    <p class="text-xl text-gray-600 text-center max-w-3xl mx-auto">
+                        Create words using the letters provided. The center letter must be used in every word!
+                    </p>
+                </header>
+
+                <!-- Game Frame - Fixed height container -->
+                <div class="w-full h-[80vh] relative game-container bg-white rounded-lg shadow-lg overflow-hidden mb-8">
+                    <iframe
+                        title="SpellBee Game"
+                        src="https://spelling-bee-free.pages.dev/"
+                        class="absolute top-0 left-0 w-full h-full border-0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                    ></iframe>
+                </div>
+
+                <!-- How to Play Section -->
+                <section class="py-12 bg-white mt-12 rounded-lg shadow-sm">
+                    <div class="max-w-4xl mx-auto px-4">
+                        <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">How to Play SpellBee</h2>
+                        
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div class="game-rules bg-gray-50 p-6 rounded-lg">
+                                <h3 class="text-xl font-semibold text-gray-800 mb-4">Game Rules</h3>
+                                <ul class="space-y-3 text-gray-600">
+                                    <li class="flex items-start">
+                                        <svg class="h-6 w-6 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                        Create words using the available letters
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="h-6 w-6 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                        Center letter must be used in every word
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="h-6 w-6 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                        Words must be at least 4 letters long
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="h-6 w-6 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                        Find pangrams for bonus points
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="scoring-system bg-gray-50 p-6 rounded-lg">
+                                <h3 class="text-xl font-semibold text-gray-800 mb-4">Scoring System</h3>
+                                <ul class="space-y-3 text-gray-600">
+                                    <li class="flex items-start">
+                                        <span class="font-medium mr-2">4 letters:</span> 1 point
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="font-medium mr-2">5 letters:</span> 5 points
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="font-medium mr-2">6+ letters:</span> Points equal to word length
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="font-medium mr-2">Pangrams:</span> 7 bonus points
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Features Section -->
+                <section class="py-12 bg-white mt-12 rounded-lg shadow-sm">
+                    <div class="max-w-4xl mx-auto px-4">
+                        <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Game Features</h2>
+                        <div class="grid md:grid-cols-3 gap-8">
+                            <div class="feature-card p-6 bg-gray-50 rounded-lg">
+                                <div class="text-blue-600 mb-4">
+                                    <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                                    </svg>
+                                </div>
+                                <h3 class="text-xl font-semibold text-gray-800 mb-2">Daily Challenges</h3>
+                                <p class="text-gray-600">New puzzles every day to keep your mind sharp and vocabulary growing.</p>
+                            </div>
+                            
+                            <div class="feature-card p-6 bg-gray-50 rounded-lg">
+                                <div class="text-purple-600 mb-4">
+                                    <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                                    </svg>
+                                </div>
+                                <h3 class="text-xl font-semibold text-gray-800 mb-2">Progress Tracking</h3>
+                                <p class="text-gray-600">Track your achievements and watch your vocabulary skills improve over time.</p>
+                            </div>
+                            
+                            <div class="feature-card p-6 bg-gray-50 rounded-lg">
+                                <div class="text-green-600 mb-4">
+                                    <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                                    </svg>
+                                </div>
+                                <h3 class="text-xl font-semibold text-gray-800 mb-2">Learning Mode</h3>
+                                <p class="text-gray-600">Perfect for expanding your vocabulary with helpful hints and word definitions.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- FAQ Section -->
+                <section class="py-12 bg-white mt-12 rounded-lg shadow-sm">
+                    <div class="max-w-4xl mx-auto px-4">
+                        <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Frequently Asked Questions</h2>
+                        <div class="space-y-6">
+                            <div class="faq-item">
+                                <h3 class="text-xl font-semibold text-gray-800 mb-2">What is a pangram?</h3>
+                                <p class="text-gray-600">A pangram is a word that uses all seven letters in the puzzle. Finding pangrams earns you bonus points!</p>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <h3 class="text-xl font-semibold text-gray-800 mb-2">Are proper nouns allowed?</h3>
+                                <p class="text-gray-600">No, proper nouns, hyphenated words, and offensive terms are not accepted in the game.</p>
+                            </div>
+                            
+                            <div class="faq-item">
+                                <h3 class="text-xl font-semibold text-gray-800 mb-2">How often are new puzzles available?</h3>
+                                <p class="text-gray-600">New puzzles are available daily at midnight local time. Each puzzle is carefully curated to ensure an engaging experience.</p>
+                            </div>
+
+                            <div class="faq-item">
+                                <h3 class="text-xl font-semibold text-gray-800 mb-2">Can I play on mobile devices?</h3>
+                                <p class="text-gray-600">Yes! SpellBee is fully optimized for mobile devices, tablets, and desktop computers. Play anywhere, anytime!</p>
+                            </div>
+
+                            <div class="faq-item">
+                                <h3 class="text-xl font-semibold text-gray-800 mb-2">How do I track my progress?</h3>
+                                <p class="text-gray-600">Your daily progress is automatically saved, and you can view your statistics, including total points, words found, and achievement badges.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Footer -->
+                <footer class="mt-12 py-8 bg-gray-100 rounded-lg">
+                    <div class="max-w-4xl mx-auto px-4 text-center">
+                        <p class="text-gray-600 mb-4">
+                            SpellBee - Enhance your vocabulary while having fun!
+                        </p>
+                        <div class="flex justify-center space-x-6">
+                            <a href="#privacy" class="text-gray-500 hover:text-gray-700">Privacy Policy</a>
+                            <a href="#terms" class="text-gray-500 hover:text-gray-700">Terms of Use</a>
+                            <a href="#contact" class="text-gray-500 hover:text-gray-700">Contact</a>
+                        </div>
+                        <p class="mt-4 text-sm text-gray-500">
+                            © 2025 SpellBee. All rights reserved.
+                        </p>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
